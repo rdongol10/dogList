@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "owner": "Rabin Dongol",
+      "address": "Teku",
+      "breed": "speech",
+      "name": "Julie",
+      "age": 5
+    },
+    {
+        "id": 2,
+        "owner": "Rabin Dongol",
+        "address": "Teku",
+        "breed": "speech",
+        "name": "Kanxa",
+        "age": 4
+      },
+      {
+        "id": 3,
+        "owner": "Tirtha Dongol",
+        "address": "Teku",
+        "breed": "Cross",
+        "name": "Kalu",
+        "age": 7
+      },
+      {
+        "id": 4,
+        "owner": "Anil Maharjan",
+        "address": "Teku",
+        "breed": "German Shephard",
+        "name": "Nardevi",
+        "age": 6
+      },
+      {
+        "id": 5,
+        "owner": "Bishesh Manandhar",
+        "address": "Dallu",
+        "breed": "Dalmacian",
+        "name": "Lucie",
+        "age": 6
+      },
+      {
+        "id": 6,
+        "owner": "Gaurav Maharjan",
+        "address": "Brahmatole",
+        "breed": "corss",
+        "name": "Sheru",
+        "age": 10
+      }
+  ]

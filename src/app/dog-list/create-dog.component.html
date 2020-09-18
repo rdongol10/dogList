@@ -1,0 +1,73 @@
+<div class="card">
+    <div class="card-header">
+        Add Dog
+    </div>
+        <span  *ngIf="errorMessage" class="alert alert-danger">
+            {{errorMessage}}
+        </span>
+    <div class="card-body">
+        
+        <form [formGroup]="dogFormGroup" *ngIf="dog" (ngSubmit)="saveDog()"> 
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="owner" class="col-form-label"> Owner</label>
+                    <input type="text" id="owner" class="form-control" formControlName="owner" [ngClass]="{'errorField': dogFormGroup.controls['owner'].dirty && dogFormGroup.controls['owner'].invalid}"/>
+                    <div class="errorMessage" *ngIf="dogFormGroup.controls['owner'].dirty && dogFormGroup.controls['owner'].invalid " >
+                        Owner is required
+                    </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label for="address" class="col-form-label"> address</label>
+                    <input type="text" id="address" class="form-control" formControlName="address" [ngClass]="{'errorField': dogFormGroup.controls['address'].dirty && dogFormGroup.controls['address'].invalid}"/>
+                    <div class="errorMessage" *ngIf="dogFormGroup.controls['address'].dirty && dogFormGroup.controls['address'].invalid " >
+                        address is required
+                    </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label for="name" class="col-form-label"> Name</label>
+                    <input type="text" id="name" class="form-control" formControlName="name" [ngClass]="{'errorField': dogFormGroup.controls['name'].dirty && dogFormGroup.controls['name'].invalid}"/>
+                    <div class="errorMessage" *ngIf="dogFormGroup.controls['name'].dirty && dogFormGroup.controls['name'].invalid " >
+                        name is required
+                    </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label for="breed" class="col-form-label"> Breed</label>
+                    <input type="text" id="breed" class="form-control" formControlName="breed" [ngClass]="{'errorField': dogFormGroup.controls['breed'].dirty && dogFormGroup.controls['breed'].invalid}"/>
+                    <div class="errorMessage" *ngIf="dogFormGroup.controls['breed'].dirty && dogFormGroup.controls['breed'].invalid " >
+                        breed is required
+                    </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label for="age" class="col-form-label"> Age</label>
+                    <input type="number" id="age" class="form-control" formControlName="age" [ngClass]="{'errorField': dogFormGroup.controls['age'].dirty && dogFormGroup.controls['age'].invalid}"/>
+                    <div class="errorMessage" *ngIf="dogFormGroup.controls['age'].dirty && dogFormGroup.controls['age'].invalid " >
+                        <span *ngIf="dogFormGroup.controls['age'].errors?.required">
+                            age is required
+                        </span>
+                        <span *ngIf="dogFormGroup.controls['age'].errors?.min">
+                            age can not be less tha 0
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <button class="btn btn-primary" (click)="cancel()">Cancel</button>
+                    &nbsp;
+                    <button type="submit" class="btn btn-success" [disabled]="dogFormGroup.invalid">Save</button>
+                </div>
+
+            </div>
+        </form>
+    </div>  
+    
+    <div clss="card-footer">
+        
+    </div>
+
+</div>

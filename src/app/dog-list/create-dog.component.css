@@ -1,0 +1,9 @@
+.errorMessage{
+    font-size: small;
+    color: red;
+    font-style: italic;
+}
+
+.errorField{
+    border-color: red;
+}

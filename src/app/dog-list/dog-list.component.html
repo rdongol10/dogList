@@ -1,0 +1,86 @@
+<div class="card">
+    <div class="card-header">
+        Dog Lists
+    </div>
+    
+    <span class="alert alert-danger" *ngIf="errorMessage">
+        {{errorMessage}}
+    </span>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-1">
+                <label for="filterBy"> Filter by</label>
+            </div>
+            <div  class="col-4">
+                <input type="text" class="form-control" id="filterBy" [(ngModel)]="filteredBy"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h4>Filtered by : {{filteredBy}} </h4>
+            </div>
+
+        </div>
+
+        <div class="table-respoonsive">
+            <table class="table" *ngIf="filteredDogs && filteredDogs.length" >
+                <thead>
+                    <tr>
+                        <th>
+                           <a>Owner</a> 
+                        </th>
+                        <th>
+                            address 
+                         </th>
+                         <th>
+                            breed 
+                         </th>
+                         <th>
+                            name 
+                         </th>
+                         <th>
+                            age 
+                         </th>
+                         <th>
+                             Action
+                         </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor ="let dog of filteredDogs"> 
+                        <td>
+                            <a [routerLink]="['/dogs',dog.id]"> {{dog.owner | dogPrefix : " dog owner"}}</a> 
+                        </td>
+                        <td>
+                            {{dog.address}}
+                        </td>
+                        <td>
+                            {{dog.breed}}
+                        </td>
+                        <td>
+                            {{dog.name}}
+                        </td>
+                        <td>
+                            <app-dog-age [age]='dog.age'></app-dog-age>
+                        </td>
+
+                        <td>
+                            <a [routerLink]="['/createDog/',dog.id]">
+                                <i class="fa fa-edit" style="color:blue"></i>
+                            </a>&nbsp;
+
+                            <a (click)="deleteDog(dog.id)" >
+                                <i class="fa fa-minus-circle" style="color:red"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        
+    </div>
+    
+</div>

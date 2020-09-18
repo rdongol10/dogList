@@ -1,0 +1,11 @@
+<nav class='navbar navbar-expand navbar-light bg-light'>
+  <a class='navbar-brand'></a>
+  <ul class='nav nav-pills'>
+    <li><a class='nav-link' [routerLink]="['/home']">Home</a></li>
+    <li><a class='nav-link' [routerLink]="['/dogs']">Dog List</a></li>
+    <li><a class='nav-link' [routerLink]="['/createDog/0']">Add Dog</a></li>
+  </ul>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
