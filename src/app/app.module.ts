@@ -5,12 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DogModule } from './dog-list/dog.module';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './users/login.component';
+import {authInterceptorProviders} from './interceptor/auth-interceptor';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
 
   ],
   imports: [
@@ -21,7 +24,7 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule
 
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
